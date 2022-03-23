@@ -52,8 +52,21 @@ public class VectorN {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return vector.equals(obj);
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+
+        VectorN vectorN = (VectorN) o;
+        if(this.size()!=vectorN.size())
+            return false;
+
+        for (int i =0; i<size();++i)
+            if(Math.abs(get(i) - vectorN.get(i)) > 1e-12)
+                return false;
+
+        return true;
     }
 
     @Override

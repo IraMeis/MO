@@ -18,7 +18,7 @@ public class MatrMN {
             builder.append("\n");
         }
 
-        return builder.toString().substring(0, builder.toString().length()-1);
+        return builder.substring(0, builder.toString().length()-1);
     }
 
     public MatrMN (int rows, int cols){
@@ -195,7 +195,7 @@ public class MatrMN {
             det *= (up.get(i,i)*up.get(i,i));
 
 
-        if (Math.abs(det) < 1e-12f)
+        if (Math.abs(det) < 1e-12)
             return null;
 
         z = VectorN.build(low.size());
