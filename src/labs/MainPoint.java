@@ -11,6 +11,6 @@ public class MainPoint {
 
         MatrMN.matrixTest();
 
-        MultiDimensional.lab4(ConstantsFunctionsUtil.f2);
+        MultiDimensional.lab4(ConstantsFunctionsUtil.f2, ConstantsFunctionsUtil.fNoShtraf, ConstantsFunctionsUtil.fWithShtraf);
     }
 }

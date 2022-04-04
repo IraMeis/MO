@@ -254,15 +254,21 @@ public class MultiDimensional {
 
     }
 
-    public static void lab4(FunctionN<Double,VectorN> f) {
+    public static void lab4(FunctionN<Double,VectorN> f1, FunctionN<Double,VectorN> fnsh, FunctionN<Double,VectorN> fsh) {
 
         System.out.println("\n////////////////////\n");
         System.out.println( "/// Lab. work #4 ///\n");
         System.out.println("////////////////////\n\n");
 
-        VectorN x_1 = new VectorN( 0.0, 0.0);
+        VectorN x_2 = new VectorN( 1.0, 5.0);
 
-        System.out.println("NewtoneRaphson         : " +
-                MultiDimensional.newtoneRaphson(f, x_1, ConstantsFunctionsUtil.epsilon2, ConstantsFunctionsUtil.maxIter));
+        System.out.println("NewtoneRaphson nsh (f1) : " +
+                MultiDimensional.newtoneRaphson(f1, x_2, ConstantsFunctionsUtil.epsilon2, ConstantsFunctionsUtil.maxIter));
+
+        VectorN v = MultiDimensional.newtoneRaphson(fsh, x_2, ConstantsFunctionsUtil.epsilon2, ConstantsFunctionsUtil.maxIter);
+
+        System.out.println("NewtoneRaphson sh (f2)  : " + v);
+        System.out.println("Shtraf is                 " + (fsh.perform(v)-fnsh.perform(v)));
+
     }
 }

@@ -16,4 +16,13 @@ public class ConstantsFunctionsUtil {
 
     public static FunctionN<Double,VectorN> f1 = arg -> (arg.get(0)-2)*(arg.get(0)-2)*(arg.get(1)-2)*(arg.get(1)-2);
     public static FunctionN<Double,VectorN> f2 = arg -> (arg.get(0) - 5) * arg.get(0) + (arg.get(1) - 3) * arg.get(1);
+
+    public static FunctionN<Double,VectorN> fNoShtraf = arg -> (arg.get(0) - 4) * (arg.get(0) - 4) + (arg.get(1) - 4) * (arg.get(1) - 4);
+
+    // x1 + x2 - 5 = 0
+    public static FunctionN<Double,VectorN> fWithShtraf = arg -> (arg.get(0) - 4) * (arg.get(0) - 4) + (arg.get(1) - 4) * (arg.get(1) - 4)
+            + 10000*(arg.get(0) + arg.get(1) - 5)*(arg.get(0) + arg.get(1) - 5);
+
+   // public static FunctionN<Double,VectorN> shtraf = arg -> 1000*(arg.get(0) + arg.get(1) - 5)*(arg.get(0) + arg.get(1) - 5);
+
 }
